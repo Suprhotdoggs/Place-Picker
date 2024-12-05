@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Suprhotdoggs/Place-Picker.git/static/css/main.37ac8731.css",
+    "main.js": "/Suprhotdoggs/Place-Picker.git/static/js/main.e73cf123.js",
+    "index.html": "/Suprhotdoggs/Place-Picker.git/index.html",
+    "main.37ac8731.css.map": "/Suprhotdoggs/Place-Picker.git/static/css/main.37ac8731.css.map",
+    "main.e73cf123.js.map": "/Suprhotdoggs/Place-Picker.git/static/js/main.e73cf123.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.37ac8731.css",
+    "static/js/main.e73cf123.js"
+  ]
+}
