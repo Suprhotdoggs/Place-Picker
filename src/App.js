@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Places from "./components/Places";
 
-function App() {
+import { useState } from "react";
+
+import { AVAILABLE_PLACES } from "./data";
+
+export default function App() {
+  const [pickedPlaces, setPickedPlaces] = useState([]);
+
+  function handleSelectedPlace(id) {
+    setPickedPlaces((prevState) => {
+      if (prevState.some((place) => place.id === id)) {
+        return prevState;
+      }
+
+      const place = AVAILABLE_PLACES.find((place) => place.id === id);
+      return [place, ...prevState];
+    });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Places
+        onSelectPlace={handleSelectedPlace}
+        title="I'd like to visit..."
+        places={pickedPlaces}
+      />
+
+      <Places
+        onSelectPlace={handleSelectedPlace}
+        title="Available Places"
+        places={AVAILABLE_PLACES}
+      />
+    </>
   );
 }
-
-export default App;
